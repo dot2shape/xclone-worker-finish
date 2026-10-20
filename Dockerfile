@@ -7,3 +7,6 @@ RUN comfy-node-install comfyui_ipadapter_plus
 
 RUN (apt-get update && apt-get install -y --no-install-recommends build-essential cmake && rm -rf /var/lib/apt/lists/*) || true \
  && pip install --no-cache-dir "insightface==0.7.3" onnxruntime-gpu onnxruntime opencv-python-headless
+
+# 볼륨 모델 경로 확장(style_models·ipadapter·insightface) — 기본 yaml 덮어쓰기
+COPY extra_model_paths.yaml /comfyui/extra_model_paths.yaml
